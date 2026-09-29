@@ -1,0 +1,102 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Ordering System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+        }
+
+        h1 {
+            background: orange;
+            color: white;
+            padding: 20px;
+        }
+
+        .food {
+            background: white;
+            width: 250px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            background: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #cart {
+            background: white;
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🍔 Online Food Ordering</h1>
+
+    <div class="food">
+        <h2>🍕 Pizza</h2>
+        <p>Price: ₹200</p>
+        <button onclick="addFood('Pizza', 200)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <h2>🍔 Burger</h2>
+        <p>Price: ₹120</p>
+        <button onclick="addFood('Burger', 120)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <h2>🍟 French Fries</h2>
+        <p>Price: ₹100</p>
+        <button onclick="addFood('French Fries', 100)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div id="cart">
+        <h2>🛒 Cart</h2>
+
+        <p id="items">No items added</p>
+
+        <h3>Total: ₹<span id="total">0</span></h3>
+
+        <button onclick="order()">Place Order</button>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        let total = 0;
+
+        function addFood(name, price) {
+
+            document.getElementById("items").innerHTML +=
+                "<br>" + name + " - ₹" + price;
+
+            total = total + price;
+
+            document.getElementById("total").innerHTML = total;
+        }
+
+        function order() {
+
+            if (total == 0) {
+                document.getElementById("message").innerHTML =
+                    "Please add food first.";
+            }
+            else {
+                document.getElementById("message").innerHTML =
+```
